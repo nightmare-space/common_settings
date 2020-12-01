@@ -40,12 +40,8 @@ class _WifiPasswordState extends State<WifiPassword>
 
   Future<void> getWifiPassword() async {
     final String wifiXml = await NiProcess.exec(
-        'cat /data/misc/wifi/WifiConfigStore.xml'); //拿到Wifi的配置文件
-    // Iterable<Match> c = RegExp("<Network>\\n([\\s\\S]+?)\\n\\</Network>").allMatches(conf);//拿到第一个
-    // String match = "";
-    // for (Match m in c) {
-    //   match = match + m.group(0);
-    // }
+      'cat /data/misc/wifi/WifiConfigStore.xml',
+    ); //拿到Wifi的配置文件
     final Iterable<Match> e =
         RegExp('name=\"SSID\">.*|name=\"PreSharedKey\".*').allMatches(wifiXml);
     String match1 = '';
@@ -53,9 +49,11 @@ class _WifiPasswordState extends State<WifiPassword>
       match1 = match1 + h.group(0) + '\n';
     }
     match1 = match1.replaceAll(
-        RegExp(
-            '&quot;</string>|name=\"SSID\">&quot;|name=\"PreSharedKey\"|>&quot;'),
-        '');
+      RegExp(
+        '&quot;</string>|name=\"SSID\">&quot;|name=\"PreSharedKey\"|>&quot;',
+      ),
+      '',
+    );
 
     match1 = match1.replaceAll(RegExp('/>'), '公开');
     wifin = match1.split('\n');
@@ -125,8 +123,11 @@ class _WifiPasswordState extends State<WifiPassword>
               child: InkWell(
                 onTap: () async {
                   await Clipboard.setData(
-                      ClipboardData(text: '${wifin[2 * index + 1]} '));
-                  NiToast.showToast('WIFI名称为${wifin[2 * index]}的密码已复制');
+                    ClipboardData(text: '${wifin[2 * index + 1]} '),
+                  );
+                  NiToast.showToast(
+                    'WIFI名称为${wifin[2 * index]}的密码已复制',
+                  );
                 },
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
