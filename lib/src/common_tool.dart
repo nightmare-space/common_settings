@@ -50,6 +50,16 @@ class _CommonToolState extends State<CommonTool> with TickerProviderStateMixin {
   // ]; //
 
   @override
+  void didChangeDependencies() {
+    WidgetsBinding.instance.addPostFrameCallback(_onAfterRendering);
+    super.didChangeDependencies();
+  }
+
+  Future<void> _onAfterRendering(Duration timeStamp) async {
+    NiToast.initContext(context);
+  }
+
+  @override
   void initState() {
     tabController = TabController(length: 3, vsync: this, initialIndex: 0);
     animationController = AnimationController(
