@@ -235,13 +235,6 @@ class _PracticalToolState extends State<PracticalTool>
             subtitle: '查看已连接的WIFI密码',
             onTap: () async {
               Navigator.of(context).push(CustomRoute(WifiPassword()));
-              // if (ToolkitInfo.isRoot) {
-              //   await paddingController.forward();
-              //   paddingController.reset();
-              //   fourthPage = 3;
-              // } else {
-              //   // showNeedRootToast();
-              // }
             },
           ),
 
@@ -284,18 +277,20 @@ class _PracticalToolState extends State<PracticalTool>
           //     },
           //   ),
           // ),
-          CardWidget(
-            title: '开机动画编辑器',
-            subtitle: '可预览的方式替换开机动画',
-            onTap: () async {
-              // if (ToolkitInfo.isRoot) {
-              // Navigator.of(context).push<void>(RippleRoute(
-              //     AnimaModify(), RouteConfig.fromContext(context)));
-              // } else {
-              //   showNeedRootToast();
-              // }
-            },
-          ),
+          // TODO 有必要写
+          // CardWidget(
+          //   title: '开机动画编辑器',
+          //   subtitle: '可预览的方式替换开机动画',
+          //   onTap: () async {
+          //     // Navigator.of(context).push(CustomRoute( AnimaModify()()));
+          //     // if (ToolkitInfo.isRoot) {
+          //     // Navigator.of(context).push<void>(RippleRoute(
+          //     //     AnimaModify(), RouteConfig.fromContext(context)));
+          //     // } else {
+          //     //   showNeedRootToast();
+          //     // }
+          //   },
+          // ),
 
           CardWidget(
             title: '快捷替换开机动画',
