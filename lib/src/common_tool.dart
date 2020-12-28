@@ -24,7 +24,9 @@ class CommonTool extends StatefulWidget {
   CommonTool({
     Key key,
   }) : super(key: key) {
-    NiProcess.exec('su');
+    if (Platform.isAndroid) {
+      NiProcess.exec('su');
+    }
   } //super(key:key)是为了将传入的key传到父类
 
   @override
