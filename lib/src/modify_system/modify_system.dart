@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:common_settings/src/public_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:global_repository/global_repository.dart';
 
 import 'battery_pretend.dart';
