@@ -80,7 +80,7 @@ class _BatteryPretendState extends State<BatteryPretend> {
                   ),
                   autofocus: false,
                   onSubmitted: (_) {
-                    NiToast.showToast('按确认修改生效');
+                    showToast('按确认修改生效');
                   },
                 ),
               ],

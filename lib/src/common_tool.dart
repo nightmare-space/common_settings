@@ -40,27 +40,6 @@ class _CommonToolState extends State<CommonTool> with TickerProviderStateMixin {
   TabController tabController;
   ScrollController scrollController = ScrollController();
   Animation<Color> tabcolor; //切换Tab对应的颜色数组
-  // final List<Color> _colors = [
-  //   Colors.white,
-  //   // Color(0xff811016),//酒红色
-  //   // Color(0xff303030),
-  //   Color(0xff213349),
-  //   //Color(0xffbd4a4a),
-  //   Color(0xff25816b),
-  //   Color(0xff4a3434),
-  //   //Color(0xff4c5fb7),
-  // ]; //
-
-  @override
-  void didChangeDependencies() {
-    WidgetsBinding.instance.addPostFrameCallback(_onAfterRendering);
-    super.didChangeDependencies();
-  }
-
-  Future<void> _onAfterRendering(Duration timeStamp) async {
-    NiToast.initContext(context);
-  }
-
   @override
   void initState() {
     tabController = TabController(length: 3, vsync: this, initialIndex: 0);

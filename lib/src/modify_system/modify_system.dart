@@ -321,7 +321,7 @@ class _ModifySystemState extends State<ModifySystem>
           subtitle: '清理RAM',
           onTap: () {
             NiProcess.exec('echo 3 > /proc/sys/vm/drop_caches');
-            NiToast.showToast('已清理');
+            showToast('已清理');
           },
         ),
         CardWidget(

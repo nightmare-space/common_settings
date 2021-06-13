@@ -45,7 +45,7 @@ class _MacAdressEditState extends State<MacAdressEdit> {
             ),
             autofocus: true,
             onSubmitted: (_) {
-              NiToast.showToast('按确认修改生效');
+              showToast('按确认修改生效');
             },
           ),
           Row(
@@ -72,11 +72,11 @@ class _MacAdressEditState extends State<MacAdressEdit> {
                   ),
                   onPressed: () async {
                     if (_textcontroller0.text.length < 17) {
-                      NiToast.showToast('MAC地址不完整');
+                      showToast('MAC地址不完整');
                     } else {
                       await NiProcess.exec(
                           'ip link set wlan0 down &&ip link set wlan0 address ${_textcontroller0.text}\n');
-                      NiToast.showToast('MAC更改成功,重新连接WIFI查看效果');
+                      showToast('MAC更改成功,重新连接WIFI查看效果');
                     }
                     if (widget.callback != null) {
                       widget.callback();

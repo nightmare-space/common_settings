@@ -110,7 +110,7 @@ class _SystemTransitionDurationState extends State<SystemTransitionDuration> {
                               sett('1', -double.parse(text3.substring(0, 3)),
                                   'window_animation_scale');
                             } else {
-                              NiToast.showToast('减不了这么多');
+                              showToast('减不了这么多');
                             }
                           },
                         ),
@@ -175,7 +175,7 @@ class _SystemTransitionDurationState extends State<SystemTransitionDuration> {
                               sett('2', -double.parse(text3.substring(0, 3)),
                                   'transition_animation_scale');
                             } else {
-                              NiToast.showToast('减不了这么多');
+                              showToast('减不了这么多');
                             }
                           },
                         ),
@@ -240,7 +240,7 @@ class _SystemTransitionDurationState extends State<SystemTransitionDuration> {
                                 sett('3', -double.parse(text3.substring(0, 3)),
                                     'animator_duration_scale');
                               } else {
-                                NiToast.showToast('减不了这么多');
+                                showToast('减不了这么多');
                               }
                             },
                           ),

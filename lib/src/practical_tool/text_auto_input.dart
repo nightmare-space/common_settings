@@ -83,11 +83,11 @@ class _TextAutoInputState extends State<TextAutoInput> {
             FlatButton(
               onPressed: () {
                 int i = int.parse(_textcontroller0.text);
-                NiToast.showToast('$i');
+                showToast('$i');
                 Timer.periodic(const Duration(seconds: 1), (Timer timer) async {
                   i--;
                   if (i == 0) {
-                    NiToast.showToast('执行输入');
+                    showToast('执行输入');
                     timer.cancel();
                     await NiProcess.exec(
                         'ime set com.android.adbkeyboard/.AdbIME\nsleep 1');
@@ -99,7 +99,7 @@ class _TextAutoInputState extends State<TextAutoInput> {
                     await NiProcess.exec(
                         'ime set com.baidu.input_mi/.ImeService');
                   } else {
-                    NiToast.showToast('$i');
+                    showToast('$i');
                   }
                 });
               },

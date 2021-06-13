@@ -80,7 +80,7 @@ class _ChangeBootAnimationState extends State<ChangeBootAnimation> {
                           'chmod -R 0644 /system/media/bootanimation.zip\n'
                           'fi\n');
 
-                      NiToast.showToast('还原成功');
+                      showToast('还原成功');
                       filepath = ' ';
                       setState(() {});
                     },

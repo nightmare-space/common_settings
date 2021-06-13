@@ -125,7 +125,7 @@ class _WifiPasswordState extends State<WifiPassword>
                   await Clipboard.setData(
                     ClipboardData(text: '${wifin[2 * index + 1]} '),
                   );
-                  NiToast.showToast(
+                  showToast(
                     'WIFI名称为${wifin[2 * index]}的密码已复制',
                   );
                 },
