@@ -75,7 +75,7 @@ class _ChangeBootAnimationState extends State<ChangeBootAnimation> {
                       // eventBus.fire(
                       //   const ExplosionWidget(),
                       // );
-                      NiProcess.exec('mount -o rw,remount /system\n'
+                      YanProcess().exec('mount -o rw,remount /system\n'
                           'cp -rf /sdcard/Nightmare/bootanimation.zip /system/media/bootanimation.zip\n'
                           'chmod -R 0644 /system/media/bootanimation.zip\n'
                           'fi\n');
